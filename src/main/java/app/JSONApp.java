@@ -62,7 +62,7 @@ public class JSONApp {
         studentData = new Student(
                 "Andrii",
                 "Rodionov",
-                3,
+                2,
                 new Tuple<>("OOP", 3),
                 new Tuple<>("English", 5),
                 new Tuple<>("Math", 2)
