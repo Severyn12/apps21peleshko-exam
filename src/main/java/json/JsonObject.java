@@ -11,9 +11,9 @@ public class JsonObject extends Json {
     private ArrayList<String> keys = new ArrayList();
 
     public JsonObject(JsonPair... jsonPairs) {
-        for (JsonPair pair: jsonPairs){
+        for (JsonPair pair: jsonPairs) {
             String key = pair.getKey();
-            if (keys.contains(key)){
+            if (keys.contains(key)) {
                 int idx = keys.indexOf(key);
                 dataStorage.set(idx, pair);
             }
@@ -39,7 +39,7 @@ public class JsonObject extends Json {
 
     public void add(JsonPair jsonPair) {
         String key = jsonPair.getKey();
-        if (keys.contains(key)){
+        if (keys.contains(key)) {
             int idx = keys.indexOf(key);
             dataStorage.set(idx, jsonPair);
         }
@@ -50,9 +50,9 @@ public class JsonObject extends Json {
     }
 
     public Json find(String name) {
-        for (JsonPair pair: dataStorage){
+        for (JsonPair pair: dataStorage) {
             String key = pair.getKey();
-            if (key.equals(name)){
+            if (key.equals(name)) {
                 return pair.getValue();
             }
         }
@@ -61,10 +61,10 @@ public class JsonObject extends Json {
 
     public JsonObject projection(String... names) {
         ArrayList<JsonPair> nwPairs = new ArrayList();
-        for (String name: names){
-            for (JsonPair pair: dataStorage){
+        for (String name: names) {
+            for (JsonPair pair: dataStorage) {
                 String key = pair.getKey();
-                if ( key.equals(name)){
+                if (key.equals(name)) {
                     nwPairs.add(pair);
                 }
             }
